@@ -1,0 +1,13 @@
+version: "3"
+services:
+  python:
+    restart: unless-stopped
+    build: .
+    working_dir: "/root/"
+    tty: true
+    volumes:
+      - ./app:/root/opt
+    environment:
+      TOKEN: ${TOKEN}
+      GUILD_ID: ${GUILD_ID}
+      CHANNEL_ID: ${CHANNEL_ID}
